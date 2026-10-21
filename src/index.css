@@ -59,52 +59,30 @@ button,
   cursor: pointer;
 }
 button:disabled {
-  cursor: not-allowed;
+  cursor: default;
 }
 
-/* Signature Stealth Components with Refined Transitions */
 .stealth-card {
   border-width: 1px;
-  border-color: #1F1F1F;
-  background-color: #0A0A0A;
-  transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.03), 0 8px 24px -12px rgba(0, 0, 0, 0.8);
-}
-
-.stealth-card-interactive {
-  border-width: 1px;
-  border-color: #1F1F1F;
-  background-color: #0A0A0A;
-  transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.stealth-card-interactive:hover {
-  border-color: #262626;
-  box-shadow: inset 0 1px 0 0 rgba(0, 255, 135, 0.08), 0 12px 32px -12px rgba(0, 0, 0, 0.9);
+  border-color: rgb(31 31 31);
+  background-color: rgb(10 10 10);
 }
 
 .stealth-input {
   border-width: 1px;
-  border-color: #1F1F1F;
-  background-color: #000000;
-  color: #E2E8F0;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border-color: rgb(31 31 31);
+  background-color: rgb(0 0 0);
+  color: rgb(226 232 240);
 }
 
 .stealth-input::placeholder {
-  color: #475569;
+  color: rgb(71 85 105);
 }
 
 .stealth-input:focus {
-  border-color: #00FF87;
+  border-color: rgb(0 255 135);
   outline: 2px solid transparent;
   outline-offset: 2px;
-  box-shadow: 0 0 0 3px rgba(0, 255, 135, 0.12);
 }
 
 .badge-emerald {
@@ -116,9 +94,9 @@ button:disabled {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
-  border-color: rgba(0, 255, 135, 0.4);
-  background-color: rgba(0, 255, 135, 0.1);
-  color: #00FF87;
+  border-color: #00ff8766;
+  background-color: #00ff871a;
+  color: rgb(0 255 135);
 }
 
 .badge-crimson {
@@ -130,9 +108,9 @@ button:disabled {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
-  border-color: rgba(255, 46, 77, 0.4);
-  background-color: rgba(255, 46, 77, 0.1);
-  color: #FF2E4D;
+  border-color: #ff2e4d66;
+  background-color: #ff2e4d1a;
+  color: rgb(255 46 77);
 }
 
 .badge-amber {
@@ -144,9 +122,9 @@ button:disabled {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
-  border-color: rgba(255, 184, 0, 0.4);
-  background-color: rgba(255, 184, 0, 0.1);
-  color: #FFB800;
+  border-color: #ffb80066;
+  background-color: #ffb8001a;
+  color: rgb(255 184 0);
 }
 
 .badge-cyan {
@@ -158,9 +136,9 @@ button:disabled {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
-  border-color: rgba(6, 182, 212, 0.4);
-  background-color: rgba(6, 182, 212, 0.1);
-  color: #06B6D4;
+  border-color: #06b6d466;
+  background-color: #06b6d41a;
+  color: rgb(6 182 212);
 }
 
 .badge-neutral {
@@ -172,12 +150,11 @@ button:disabled {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
-  border-color: #262626;
-  background-color: #111111;
-  color: #94A3B8;
+  border-color: rgb(38 38 38);
+  background-color: rgb(17 17 17);
+  color: rgb(148 163 184);
 }
 
-/* Smooth Transitions & Keyframes */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -189,54 +166,44 @@ button:disabled {
   }
 }
 
-@keyframes viewEnter {
-  0% {
-    opacity: 0;
-    transform: translateY(10px) scale(0.996);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-@keyframes cardSwitch {
-  0% {
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out;
 }
 
 @keyframes pulseGlowEmerald {
   0%,
   100% {
     opacity: 1;
-    box-shadow: 0 0 0 0 rgba(0, 255, 135, 0.5);
+    box-shadow: 0 0 #00ff8780;
   }
   50% {
     opacity: 0.85;
-    box-shadow: 0 0 0 10px rgba(0, 255, 135, 0);
+    box-shadow: 0 0 0 10px #00ff8700;
   }
+}
+
+.animate-pulse-glow-emerald {
+  animation: pulseGlowEmerald 2s ease-in-out infinite;
 }
 
 @keyframes slideInLeft {
   0% {
-    transform: translateX(-100%);
+    transform: translate(-100%);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
+    transform: translate(0);
     opacity: 1;
   }
 }
 
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
 @keyframes slideUp {
   0% {
-    transform: translateY(18px);
+    transform: translateY(20px);
     opacity: 0;
   }
   100% {
@@ -245,50 +212,19 @@ button:disabled {
   }
 }
 
-@keyframes routeDash {
-  to {
-    stroke-dashoffset: -12;
-  }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-view-enter {
-  animation: viewEnter 0.38s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-card-switch {
-  animation: cardSwitch 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-pulse-glow-emerald {
-  animation: pulseGlowEmerald 2s ease-in-out infinite;
-}
-
-.animate-slide-in-left {
-  animation: slideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
 .animate-slide-up {
-  animation: slideUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: slideUp 0.35s ease-out;
 }
 
-.animate-route-dash {
-  animation: routeDash 1.2s linear infinite;
-}
-
-/* Scrollbars */
 .stealth-scroll::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 .stealth-scroll::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #0a0a0a;
 }
 .stealth-scroll::-webkit-scrollbar-thumb {
-  background: #1F1F1F;
+  background: #1f1f1f;
 }
 .stealth-scroll::-webkit-scrollbar-thumb:hover {
   background: #262626;
@@ -302,7 +238,7 @@ button:disabled {
   background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1F1F1F;
+  background: #1f1f1f;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #333333;
@@ -315,11 +251,11 @@ button:disabled {
 }
 
 .stage-connector {
-  background: linear-gradient(90deg, #00FF87, #06B6D4);
+  background: linear-gradient(90deg, #00ff87, #06b6d4);
 }
 
 .stage-connector-pending {
-  background: #1F1F1F;
+  background: #1f1f1f;
 }
 
 @media (max-width: 768px) {
